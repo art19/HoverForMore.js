@@ -317,4 +317,4 @@
 		return self;
 	};
 
-})(window.jQuery || $);
+})(jQuery || $);
