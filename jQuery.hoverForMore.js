@@ -21,7 +21,8 @@
 		"addStyles": true,
 		"target": false,
 		"startEvent": isMobile ? "touchstart" : (isjQuery ? "mouseenter" : "mouseover"),
-		"stopEvent":  isMobile ? "touchend"   : (isjQuery ? "mouseleave" : "mouseout" )
+		"stopEvent":  isMobile ? "touchend"   : (isjQuery ? "mouseleave" : "mouseout" ),
+		"originalOverflow": undefined
 	};
 
 
@@ -134,7 +135,7 @@
 
 			// Over-ride the text overflow, and cache the overflow css that we started with
 			originalOverflowParent = originalOverflowParent	|| $parent.css("overflow");
-			originalOverflow       = originalOverflow       || $item  .css("overflow");
+			originalOverflow       = options.originalOverflow || originalOverflow       || $item  .css("overflow");
 
 			$parent.css("overflow", "hidden");
 			if(isMobile && options.addStyles)
